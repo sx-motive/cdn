@@ -8,15 +8,23 @@
     <style>
       @font-face {
         font-family: 'Apercu';
-        src: url('https://cdn.jsdelivr.net/gh/sx-motive/cdn@master/fonts/apercu/ApercuPro-Medium.woff')
+        src: url('https://cdn.jsdelivr.net/gh/sx-motive/cdn@master/fonts/apercu/ApercuPro-Regular.woff')
           format('woff');
-        font-weight: 500;
+        font-weight: 400;
         font-style: normal;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 14px;
       }
       body {
         margin: 0;
         padding: 0;
         font-family: 'Apercu';
+        background-color: #111;
       }
 
       a {
@@ -25,10 +33,12 @@
 
       .marquee {
         overflow: hidden;
-        border-top: 1px solid rgb(126, 126, 126);
-        border-bottom: 1px solid rgb(126, 126, 126);
+        border-top: 1px solid rgb(54, 54, 54);
+        border-bottom: 1px solid rgb(54, 54, 54);
         display: flex;
         flex-wrap: nowrap;
+        padding: 3px 0;
+        margin: 3px 0;
       }
 
       .marquee span {
@@ -37,7 +47,7 @@
         white-space: nowrap;
         margin-right: 5px;
         mix-blend-mode: difference;
-        color: #000;
+        color: rgb(231, 231, 231);
         text-decoration: none;
       }
     </style>
