@@ -4,9 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Design & Development</title>
+    <title>Denis Kunitsyn</title>
+    <style>
+      @font-face {
+        font-family: 'Apercu';
+        src: url('https://cdn.jsdelivr.net/gh/sx-motive/cdn@master/fonts/apercu/ApercuPro-Medium.woff')
+          format('woff');
+        font-weight: 500;
+        font-style: normal;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Apercu';
+      }
+
+      .marquee {
+        overflow: hidden;
+        border-top: 1px solid rgb(126, 126, 126);
+        border-bottom: 1px solid rgb(126, 126, 126);
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      .marquee span {
+        display: flex;
+        font-size: 1rem;
+        white-space: nowrap;
+        margin-right: 5px;
+        mix-blend-mode: difference;
+        color: #000;
+      }
+    </style>
   </head>
   <body>
-    <span>Denis Kunitsyn</span>
+    <a href="https://t.me/sxmotive" target="_blank">
+      <div class="marquee">
+        <span
+          >Дизайн и Разработка проекта ↗︎ Design & Product Development ↗︎</span
+        >
+      </div>
+    </a>
+    <script>
+      function Marquee(selector, speed) {
+        const parentSelector = document.querySelector(selector);
+        const clone = parentSelector.innerHTML;
+        const firstElement = parentSelector.children[0];
+        let i = 0;
+        console.log(firstElement);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+
+        setInterval(function () {
+          firstElement.style.marginLeft = `-${i}px`;
+          if (i > firstElement.clientWidth) {
+            i = 0;
+          }
+          i = i + speed;
+        }, 0);
+      }
+
+      window.addEventListener('load', Marquee('.marquee', 0.1));
+    </script>
   </body>
 </html>
